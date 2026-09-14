@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>先生って、楽しいぞ。｜つるぶん授業フェス2026 特設ページ（前多昌顕）</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #22242a; --muted: #6b6f76; --line: #e4e4e0;
+    --accent: #2e6b4f; --accent-soft: #e7f0ea; --code-bg: #1e2127; --code-ink: #e6e6e6;
+    --note-bg: #fff8e6; --note-line: #e8d48a; --note-ink: #6b5310;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181d; --panel: #1e2127; --ink: #e7e8ea; --muted: #9aa0a8; --line: #313640;
+      --accent: #7fc19d; --accent-soft: #1f2a24; --code-bg: #12141a; --code-ink: #e6e6e6;
+      --note-bg: #2a2617; --note-line: #5c5024; --note-ink: #e0cf90;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+    line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 40px 20px 80px; }
+  header.page { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 8px; }
+  header.page h1 { font-size: 1.6rem; margin: 0 0 6px; letter-spacing: .01em; }
+  header.page .sub { color: var(--muted); font-size: .95rem; margin: 0; }
+  .lead { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 24px 0 32px; font-size: .95rem; }
+  .lead h2 { font-size: 1rem; margin: 0 0 8px; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; }
+  nav.toc a { text-decoration: none; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 4px 12px; font-size: .85rem; }
+  section.step { margin-bottom: 40px; }
+  section.step > h2 { font-size: 1.25rem; border-left: 5px solid var(--accent); padding-left: 12px; margin: 0 0 10px; }
+  section.step h3 { font-size: 1.05rem; margin: 22px 0 8px; }
+  .what { color: var(--muted); font-size: .93rem; margin: 0 0 12px; }
+  .note { background: var(--note-bg); border: 1px solid var(--note-line); color: var(--note-ink); border-radius: 8px; padding: 10px 14px; font-size: .86rem; margin: 12px 0; }
+  .note.calm { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+  .codewrap { position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); margin: 14px 0; }
+  .codebar { display: flex; justify-content: space-between; align-items: center; background: var(--code-bg); padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .codebar .fname { color: #9aa7b8; font-size: .78rem; font-family: "SF Mono", Menlo, Consolas, monospace; }
+  .copy-btn { background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 5px 14px; font-size: .8rem; cursor: pointer; white-space: nowrap; }
+  .copy-btn:hover { filter: brightness(1.08); }
+  .copy-btn.done { background: #3a6a4a; }
+  pre { margin: 0; background: var(--code-bg); color: var(--code-ink); padding: 16px; overflow-x: auto; font-size: .86rem; line-height: 1.7; white-space: pre-wrap; word-break: break-all; }
+  pre code { font-family: "Hiragino Sans", "Noto Sans JP", sans-serif; }
+  .btnlink { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 8px; padding: 10px 20px; font-size: .95rem; margin: 6px 4px 6px 0; }
+  .btnlink:hover { filter: brightness(1.08); }
+  .btnlink.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  .btnlink.big { font-size: 1.05rem; padding: 14px 24px; }
+  ol.steps { padding-left: 1.3em; } ol.steps li { margin: 10px 0; }
+  ul.checks { padding-left: 1.3em; } ul.checks li { margin: 10px 0; }
+  table.rub { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 12px 0; }
+  table.rub th, table.rub td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  table.rub th { background: var(--accent-soft); width: 32%; }
+  .line3 { background: var(--panel); border: 2px solid var(--accent); border-radius: 12px; padding: 16px 20px; text-align: center; font-size: 1.15rem; font-weight: 700; margin: 12px 0; }
+  .line3 small { display: block; font-weight: 400; font-size: .9rem; color: var(--muted); margin-top: 6px; }
+  .cta { background: var(--accent-soft); border-radius: 12px; padding: 18px 20px; margin-top: 40px; font-size: .95rem; }
+  .cta strong { color: var(--accent); }
+  footer.page { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
+  @media (max-width: 600px) { .wrap { padding: 24px 14px 60px; } header.page h1 { font-size: 1.3rem; } pre { font-size: .82rem; } }
+</style></head>
+<body>
+<div class="wrap">
+
+<header class="page">
+  <h1>先生って、楽しいぞ。｜特設ページ</h1>
+  <p class="sub">つるぶん授業フェス2026 Day1「有識者 vs ノラ教師」生成AIワークショップ（2026年9月19日・都留文科大学）／ノラ教師のほう＝前多昌顕</p>
+</header>
+
+<div class="lead">
+  <h2>このページがあるので、メモは取らなくて大丈夫です</h2>
+  <p>ワークで使うプロンプトも、道具のリンクも、あとから見返したいスライドも、<strong>全部ここに置いてあります</strong>。画面を追いかけるより、手を動かすことと「自分の教室だとどうかな」と考えることに時間を使ってください。</p>
+  <p style="margin-bottom:0"><strong>スマホでも、iPadでも、AIが手元になくても参加できます。</strong>AIがない人は、隣の人が「選者」になります。</p>
+</div>
+
+<nav class="toc">
+  <a href="#line">今日の線引き</a>
+  <a href="#work1">ワーク① 俳句</a>
+  <a href="#work2">ワーク② 話し合い</a>
+  <a href="#office">職員室の実物</a>
+  <a href="#students">学生の皆さんへ</a>
+  <a href="#slides">スライド</a>
+  <a href="#reflect">振り返り</a>
+</nav>
+
+<section class="step" id="line">
+  <h2>今日の線引きは、1本だけ</h2>
+  <p class="what">職員室でも教室でも、やったことは同じです。渡す作業を選んだだけです。</p>
+  <div class="line3">作業は、渡す。　練習は、渡さない。　判断は、渡さない。
+    <small>迷ったときの問い ——「これは作業か、練習か、判断か」</small></div>
+  <ul class="checks">
+    <li><strong>作業</strong>＝繰り返しで、誰がやっても同じ結果になるもの（集計・転記・整形・要約・下書き）→ 渡す</li>
+    <li><strong>練習</strong>＝その人が伸びるためにやっているもの（子どもの学習、若手が経験を積む工程）→ 渡さない</li>
+    <li><strong>判断</strong>＝責任が発生するもの（評定、生徒指導の決定、保護者への回答の最終形、作品の採用・却下）→ 渡さない</li>
+  </ul>
+  <table class="rub">
+    <tr><th>職員室</th><td>所見の叩き台・集計・振り返りの集約を渡した → 定時に帰れた</td></tr>
+    <tr><th>ワーク① 俳句</th><td>助言だけ渡して、最初の一句と採用・却下は渡さなかった → 考える仕事が残った</td></tr>
+    <tr><th>ワーク② 話し合い</th><td>整理だけ渡して、判定は渡さなかった → 2周目が回った</td></tr>
+  </table>
+</section>
+
+<section class="step" id="work1">
+  <h2>ワーク①　俳句 ——「直させない」</h2>
+  <p class="what">小学5年「日常を十七音で」（光村図書・全3時間）で実際にやった流れの圧縮版です。AIが入るのは後半だけ。<strong>最初の一句は必ず自力</strong>です。</p>
+
+  <h3>ものさし（ルーブリック）を先に配る</h3>
+  <table class="rub">
+    <tr><th>1　音数とリズム</th><td>五・七・五。字余り・字足らずは、あえてならOK</td></tr>
+    <tr><th>2　季語</th><td>季節が伝わる言葉がひとつ。季重なりはおおらかに</td></tr>
+    <tr><th>3　表現の工夫</th><td>比喩・反復・言葉の順序・漢字と仮名の使い分け</td></tr>
+  </table>
+  <p class="what">この3観点は、本単元の評価規準（「比喩や反復などの表現の工夫に気づいている」など）とそのまま対応します。配っただけでは読まれません。「評価する側」に立った瞬間に、読まれ始めます。</p>
+
+  <h3>やること① 自力で一句（4分）</h3>
+  <p class="what">お題は「今日の都留」か「秋」。スマホのメモでも紙でも。AIには、まだ触りません。</p>
+
+  <h3>やること② AIに助言をもらう（5分）</h3>
+  <p class="what">下の文をコピーして、ふだん使っているAI（Gemini・ChatGPT・Copilot、何でも）に貼り、最後に自分の句を書き足して送ってください。</p>
+  <div class="codewrap">
+    <div class="codebar"><span class="fname">俳句の助言プロンプト（ワークショップ用・大人版）</span><button class="copy-btn">コピー</button></div>
+    <pre><code>わたしが作った俳句です。次のルーブリックに照らして、良いところを一つ、もっと良くなる提案を二つ、書いてください。直した句は示さないでください。
+
+ルーブリック
+1　音数とリズム（五・七・五。字余り・字足らずは、あえてならOK）
+2　季語（季節が伝わる言葉がひとつ。季重なりはおおらかに）
+3　表現の工夫（比喩・反復・言葉の順序・漢字と仮名の使い分け）
+
+俳句：</code></pre>
+  </div>
+  <div class="codewrap">
+    <div class="codebar"><span class="fname">教室で使った版（小学5年生・Gemini）</span><button class="copy-btn">コピー</button></div>
+    <pre><code>小学生が作った俳句です。次のルーブリックに照らして、良いところを一つ、もっと良くなる提案を二つ、小学生に分かる言葉で書いてください。直した句は示さないでください。
+この教材では、字余りや字足らずも許し、季重なりもおおらかに扱います。決まりを機械的に指摘しないでください。
+
+ルーブリック
+1　音数とリズム
+2　季語
+3　表現の工夫（比喩・反復・言葉の順序・漢字と仮名の使い分け）
+
+俳句：</code></pre>
+  </div>
+  <div class="note calm">
+    <strong>直させないのが肝です。</strong>完成形を見せられたら、子どもは写して終わります。答えではなく手がかりを渡すから、考える仕事が子どもの手元に残ります。<br>
+    提案を採用するか、却下するか。決めるのは作者。<strong>却下も立派な推敲です。</strong>納得できなければ頼み直して構いません。
+  </div>
+  <p class="what"><strong>AIが手元にない人へ：</strong>隣の人の端末で送るか、隣の人が「選者」になって同じ3つ（良いところ1つ・提案2つ・直した句は言わない）を口で言ってください。人でもできる設計です。</p>
+
+  <h3>やること③ 立場を逆に（5分）</h3>
+  <p class="what">前多が目の前でAIに5句作らせます。隣の2〜3人で、上のものさし3つで批評してください。良い句は良いと言う。物足りない句はどこが物足りないかを言う。あら探しではありません。</p>
+  <div class="codewrap">
+    <div class="codebar"><span class="fname">前多が投影で使う頼み方（教室でも同じ）</span><button class="copy-btn">コピー</button></div>
+    <pre><code>秋の俳句を5句作ってください。小学5年生が作ったような句で。
+上手い句と、音数は整っているけれど心が動かない句を混ぜてください。番号をつけて、句だけを並べてください。</code></pre>
+  </div>
+  <div class="note">
+    <strong>友達の句には言いにくい辛口の評も、AIの句になら素直に言えます。</strong>傷つく作者がいない。批評の練習台として、これほど都合のいい相手はいません。評価される側から、評価する側へ。立場が変わると、ルーブリックは「読む」ものから「使う」ものに変わります。
+  </div>
+
+  <h3>種明かし：渡さなかった2か所</h3>
+  <ol class="steps">
+    <li><strong>最初の一句。</strong>発想のゼロから一は、AIに触らせない。ここを任せた瞬間、創作の学びは消えます。</li>
+    <li><strong>採用か却下かの決定。</strong>助言は情報、決定は作者。作者の座は明け渡さない。</li>
+  </ol>
+  <p class="what">落とし穴もひとつ。<strong>助言どおりに直して満足する</strong>こと。AIは頼めば頼むほど、そつのない句に整えてきます。そつのない句が30句そろうと、授業は成功に見えてしまう。教師の側に、整いを疑う目が要ります。見取りは成果物から過程へ（推敲した箇所は色を変える／直す前の句を端末で撮っておく）。</p>
+  <p class="what" style="margin-bottom:0">PISA2025（2026年9月8日公表）で、AI利用と成績の関係がはっきりプラスに出た組み合わせはひとつだけでした。<strong>授業で「AIが出した情報の質を評価する」経験があり、週1回以上使っている子</strong>。やること③がそれです。※OECD自身が「相関であって因果ではない」と但し書きをつけています。PISAは15歳の調査です。</p>
+</section>
+
+<section class="step" id="work2">
+  <h2>ワーク②　話し合い ——「判定させない」</h2>
+  <p class="what">教科書の話し合い単元にある「どちらの主張に説得力があるか比べる」を、そのままやります。テーマは<strong>海がいいか、山がいいか</strong>。好きなほうを言う会ではありません。</p>
+
+  <h3>やること① 3〜4人で話して、録る（4分）</h3>
+  <p style="margin:0 0 6px"><a class="btnlink big" href="https://johnnymaeta.github.io/kirokukunneo/" target="_blank" rel="noopener">スーパー記録くんを開く（録音はここ）</a></p>
+  <ol class="steps">
+    <li>班で1台。上のボタンで開き、<strong>グループ名</strong>に班の番号か好きな名前を入れる</li>
+    <li>「音声録音」を選ぶ。マイクの許可は「許可」</li>
+    <li>3分話す。雑談のままでいい。終わったら<strong>保存</strong></li>
+  </ol>
+  <div class="note">保存で「サーバーが混み合っています」と出たら、少し待ってもう一度保存してください。どうしても保存できない班は、記録係がメモで大丈夫です。</div>
+
+  <h3>AIの整理を返します</h3>
+  <p class="what">前多が録音をGemini Notebookに入れて整理させ、会場に返します。投げ返しの言葉は2つだけです。</p>
+  <div class="line3">「こんな感じなんだけど、どう？」<small>「拾ってくれなかった人、いる？」</small></div>
+  <p class="what">任せきらないのが肝です。「こんな感じだよ」と言い切ったら、そこで話し合いは終わります。最初は鵜呑み → 繰り返すうちにアラを探す → 批判的になってからが本番。</p>
+
+  <h3>やること② 2周目（5分）—— AIには判定させない</h3>
+  <p class="what">AIが挙げた「説得力を左右した要素」を借りて、班でもう一度、自分たちで判定します。好きなほうと、説得力があったほうは、別でいい。<strong>「僕は海が好きだけど、山のほうが説得力があった」</strong>が出たら成功です。</p>
+
+  <h3>先生が自分の教室でやるときの、AIへの指示文</h3>
+  <div class="codewrap">
+    <div class="codebar"><span class="fname">Gemini Notebook（またはチャット型AI）への指示文</span><button class="copy-btn">コピー</button></div>
+    <pre><code>班ごとの話し合いの録音（または文字起こし）を読んで、次の形で整理してください。
+
+1　班ごとに、主張と根拠を箇条書きにする
+2　少数意見や、途中で消えた意見、うまく言えていなかった意見も残す
+3　どちらが勝ったかは判定しない
+4　そのうえで、説得力を左右していた要素を3つ挙げる（例：根拠の具体性、相手の主張への応答、感情と論理の切り分け）
+
+小学生に読ませるので、短く、分かる言葉で。</code></pre>
+  </div>
+  <div class="note calm">
+    <strong>同じ録音、同じAI、同じ45分。</strong>AIに判定させたらアウトソーシング（思考そのものを代わりにやらせる）。AIの判断基準を借りて自分で判断したらオフローディング（思考を支える任せ方）。打つ手は「AIを取り上げる」ではなく、「渡す作業を選ぶ」です。
+  </div>
+
+  <h3>種明かし：ベテランの先生の実践</h3>
+  <p class="what">知人のベテランの先生から「話し合いを録音してAIに聞かせ、どっちが説得力あったか判定させたい」と相談を受けました。僕の提案はひとつだけ。<strong>本番の前に、軽いテーマで練習を挟む。</strong>「きのこの山とたけのこの里」で話し合って録音し、AIに分析させる。そこで子どもに見せるのは勝ち負けではなく、AIが「何に注目して説得力を判断したか」のほう。そのうえで本番の「海 vs 山」は、AIに判定させず、子どもたち自身が聞き比べて議論する。子どもの振り返りに、こうありました。</p>
+  <div class="line3" style="font-size:1rem">「僕は海が好きだけれど、話し合いの内容は山グループのほうが説得力がありました」</div>
+  <p class="what" style="margin-bottom:0">やったのは僕ではありません。ICTに特別詳しいわけではないベテランの先生が実践して、手応えをつかんでくれました。</p>
+
+  <h3>話し合いは、1周で終わっていました</h3>
+  <ul class="checks">
+    <li>聞こえるのは、近くの班だけ</li>
+    <li>声の大きい子の主張だけが、学級の意見になる</li>
+    <li>チャイムで、教師が強引にまとめる</li>
+    <li>まとめを書き写す時間が、2周目を食っていた</li>
+  </ul>
+  <p class="what">いつも静かな子の発言が、AIの整理の中で浮かび上がってきます。スーパー記録くんを作った理由はここです。合言葉は<strong>「集めるのはクラウド、さばくのはAI、決めるのは人」</strong>。録音は成績の根拠にはしません。</p>
+  <p class="what" style="margin-bottom:0"><strong>道具は無料で配っています。</strong>スプレッドシートをコピーしてデプロイするだけで、自分の学校用が作れます（GitHubアカウントもコード編集も不要）。導入手順は研修メニュー表からたどれます。学校のアカウントでGASが制限されている場合は、録音係の端末1台を先生の個人アカウントで動かす、という代替経路があります。</p>
+</section>
+
+<section class="step" id="office">
+  <h2>職員室の実物 —— 帰れる理由は、根性ではありません</h2>
+  <p class="what">うちの学校は16時30分退勤。チャイムが鳴ったら帰ります。渡したのは、全部「作業」です。</p>
+  <ol class="steps">
+    <li><strong>通知表の所見の叩き台</strong>——過去の自分の所見から「文体仕様書」を作らせておく（1回だけ）。人がやるのは、事実の記録を貼ることと、最終形にすること。</li>
+    <li><strong>行事反省・アンケートの集計</strong>——フォームが自動で作られ、集約され、通知が飛ぶ。人が入れるのは、行事名と日付だけ。</li>
+    <li><strong>研修の振り返りの集約</strong>——会場の声を録音で集めて、AIが分類して、その場で返す（今日のワーク②と同じ道具）。</li>
+  </ol>
+  <div class="codewrap">
+    <div class="codebar"><span class="fname">明日やる「最初の1個」（そのまま貼ってください）</span><button class="copy-btn">コピー</button></div>
+    <pre><code>この学校経営方針を、職員会議で口頭説明するつもりで要約してください。
+
+・全体で400字以内
+・「今年、何を変えるのか」がわかる形で
+・学年主任に伝えるときに使える言い方で
+
+そのあとに、「この方針から考えると、今年やめてもいい仕事」を3つ挙げてください。</code></pre>
+  </div>
+  <p class="what" style="margin-bottom:0">自分の文書で、個人情報がなくて、失敗しても誰も困らなくて、良し悪しを自分で判定できる。だからここから始めます。コードは1文字も書いていません。AIに書かせています。</p>
+</section>
+
+<section class="step" id="students">
+  <h2>学生の皆さんへ</h2>
+  <div class="line3">定時に帰る先生は、実在します。<small>うちの学校には、僕以外にも定時で帰る先生がたくさんいます。根性でも要領でもなく、渡せる作業を渡しているだけです。</small></div>
+  <ul class="checks">
+    <li><strong>先生の背中は、無言の教材です。</strong>子どもが毎日、間近で観察できる「働く大人」は、ほぼ先生だけ。小中学校だけで9年間。しょぼくれた背中を9年間見せ続けるのは、よろしくない。</li>
+    <li><strong>時短は手段です。目的は余白。</strong>教室では余白で2周目を回し、自分は余白で機嫌よく過ごす。週末の楽しみは、月曜の朝、雑談になって教室に流れ込みます。</li>
+    <li><strong>教育実習でも使えるのは、「ルーブリックを先に配る」だけでも効きます。</strong>AIがなくても成立します。</li>
+    <li>「先生は忙しいから仕方ない」で、終わらせないでください。</li>
+  </ul>
+  <p class="what" style="margin-bottom:0">作業はスキップする。思考はスキップしない。そして、楽しそうな先生が、最高の教育環境。</p>
+</section>
+
+<section class="step" id="slides">
+  <h2>今日のスライド（PDF）</h2>
+  <p class="what">当日お見せしたものをそのまま置いておきます。見返したいところだけ、あとから開いてください。</p>
+  <p style="margin:0 0 6px"><a class="btnlink" href="assets/tsuru20260919_slides.pdf" target="_blank" rel="noopener">スライドを見る（PDF・30枚）</a></p>
+</section>
+
+<section class="step" id="reflect">
+  <h2>振り返りを、一言だけ</h2>
+  <p class="what">ワーク②で使ったのと同じ「スーパー記録くん」です。今度は一人で、一言。<strong>打ってもいいですし、話すだけでもかまいません。</strong>次にお話しするときの材料にさせてください。</p>
+  <p style="margin:0 0 6px"><a class="btnlink" href="https://johnnymaeta.github.io/kirokukunneo/" target="_blank" rel="noopener">振り返りを送る（スーパー記録くん）</a></p>
+  <ul class="checks">
+    <li>明日やってみようと思ったことを1つ</li>
+    <li><strong>「これは無理だ」と思ったところ</strong>（ここがいちばん知りたいです）</li>
+    <li>学生の方は、「先生って楽しそう」と思えたか、思えなかったか</li>
+  </ul>
+  <p class="what" style="margin-bottom:0">名前の欄は「学生」「高校」「一般」などで結構です。「テキスト」を選ぶといちばん手軽です。</p>
+</section>
+
+<div class="cta">
+  <p style="margin-top:0"><strong>本と、研修のこと</strong></p>
+  <p>今日の話の土台は、Kindleで出している本です。教室のほうは<strong>『AIに、わざと間違えさせる』</strong>、背中のほうは<strong>『楽しそうな先生が、最高の教育環境』</strong>、職員室のほうは<strong>『その書類、AIの60点から始めませんか』</strong>。どれもKindle Unlimitedの対象です。</p>
+  <p><a class="btnlink ghost" href="https://link.amazon/B00VoIrzV" target="_blank" rel="noopener">Amazon著者ページ</a>
+     <a class="btnlink ghost" href="https://www.youtube.com/@maetaict" target="_blank" rel="noopener">YouTube（毎日19時・3分）</a>
+     <a class="btnlink ghost" href="https://bit.ly/maeta-kenshu" target="_blank" rel="noopener">研修・講演のメニュー表</a></p>
+  <p style="margin-bottom:0">今日はありがとうございました。<strong>明日、作業をひとつだけAIに渡してみてください。浮いた時間は、子どもに返しても、自分に使っても構いません。</strong></p>
+</div>
+
+<footer class="page">
+  つるぶん授業フェス2026 Day1「有識者 vs ノラ教師」生成AIワークショップ（2026年9月19日・都留文科大学）／前多昌顕<br>
+  このページのURL: <code>bit.ly/tsuru0919</code>
+</footer>
+
+</div>
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const code = btn.closest('.codewrap').querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'コピーしました';
+        btn.classList.add('done');
+        setTimeout(() => { btn.textContent = original; btn.classList.remove('done'); }, 1600);
+      });
+    });
+  });
+</script>
+</body>
+</html>
