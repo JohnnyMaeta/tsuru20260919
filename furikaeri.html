@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>いただいた声と、次への宿題｜つるぶん授業フェス2026（前多昌顕）</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #22242a; --muted: #6b6f76; --line: #e4e4e0;
+    --accent: #2e6b4f; --accent-soft: #e7f0ea; --code-bg: #1e2127; --code-ink: #e6e6e6;
+    --note-bg: #fff8e6; --note-line: #e8d48a; --note-ink: #6b5310;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181d; --panel: #1e2127; --ink: #e7e8ea; --muted: #9aa0a8; --line: #313640;
+      --accent: #7fc19d; --accent-soft: #1f2a24; --code-bg: #12141a; --code-ink: #e6e6e6;
+      --note-bg: #2a2617; --note-line: #5c5024; --note-ink: #e0cf90;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+    line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 40px 20px 80px; }
+  header.page { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 8px; }
+  header.page h1 { font-size: 1.6rem; margin: 0 0 6px; letter-spacing: .01em; }
+  header.page .sub { color: var(--muted); font-size: .95rem; margin: 0; }
+  .lead { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 24px 0 32px; font-size: .95rem; }
+  .lead h2 { font-size: 1rem; margin: 0 0 8px; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; }
+  nav.toc a { text-decoration: none; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 4px 12px; font-size: .85rem; }
+  section.step { margin-bottom: 40px; }
+  section.step > h2 { font-size: 1.25rem; border-left: 5px solid var(--accent); padding-left: 12px; margin: 0 0 10px; }
+  section.step h3 { font-size: 1.05rem; margin: 22px 0 8px; }
+  .what { color: var(--muted); font-size: .93rem; margin: 0 0 12px; }
+  .note { background: var(--note-bg); border: 1px solid var(--note-line); color: var(--note-ink); border-radius: 8px; padding: 10px 14px; font-size: .86rem; margin: 12px 0; }
+  .note.calm { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+  .codewrap { position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); margin: 14px 0; }
+  .codebar { display: flex; justify-content: space-between; align-items: center; background: var(--code-bg); padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .codebar .fname { color: #9aa7b8; font-size: .78rem; font-family: "SF Mono", Menlo, Consolas, monospace; }
+  .copy-btn { background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 5px 14px; font-size: .8rem; cursor: pointer; white-space: nowrap; }
+  .copy-btn:hover { filter: brightness(1.08); }
+  .copy-btn.done { background: #3a6a4a; }
+  pre { margin: 0; background: var(--code-bg); color: var(--code-ink); padding: 16px; overflow-x: auto; font-size: .86rem; line-height: 1.7; white-space: pre-wrap; word-break: break-all; }
+  pre code { font-family: "Hiragino Sans", "Noto Sans JP", sans-serif; }
+  .btnlink { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 8px; padding: 10px 20px; font-size: .95rem; margin: 6px 4px 6px 0; }
+  .btnlink:hover { filter: brightness(1.08); }
+  .btnlink.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  .btnlink.big { font-size: 1.05rem; padding: 14px 24px; }
+  ol.steps { padding-left: 1.3em; } ol.steps li { margin: 10px 0; }
+  ul.checks { padding-left: 1.3em; } ul.checks li { margin: 10px 0; }
+  table.rub { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 12px 0; }
+  table.rub th, table.rub td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  table.rub th { background: var(--accent-soft); width: 32%; }
+  .line3 { background: var(--panel); border: 2px solid var(--accent); border-radius: 12px; padding: 16px 20px; text-align: center; font-size: 1.15rem; font-weight: 700; margin: 12px 0; }
+  .line3 small { display: block; font-weight: 400; font-size: .9rem; color: var(--muted); margin-top: 6px; }
+  .cta { background: var(--accent-soft); border-radius: 12px; padding: 18px 20px; margin-top: 40px; font-size: .95rem; }
+  .cta strong { color: var(--accent); }
+  footer.page { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
+  @media (max-width: 600px) { .wrap { padding: 24px 14px 60px; } header.page h1 { font-size: 1.3rem; } pre { font-size: .82rem; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="page">
+  <h1>いただいた声と、次への宿題</h1>
+  <p class="sub">つるぶん授業フェス2026 Day1「有識者 vs ノラ教師」生成AIワークショップ（2026年9月19日・都留文科大学）／前多昌顕</p>
+</header>
+
+<div class="lead">
+  <h2>忖度なしで、とお願いしました</h2>
+  <p style="margin:0">最後に録音でいただいた声を、全部聞き直しました。良かったと言っていただいたところも、届かなかったところも、そのまま受け止めて書きます。<strong>回線が落ちてワーク②の本番ができなかった件も、ごまかさずに書きます。</strong>次にお話しするときの設計図として使わせていただきます。ありがとうございました。<br>
+  <span class="what">※ このページは、いただいた声を私の責任で要約したものです。発言をそのまま引用することはしていません。</span></p>
+</div>
+
+<nav class="toc">
+  <a href="#rubric">いちばん届いたこと</a>
+  <a href="#translate">置き換えてくださった例</a>
+  <a href="#words">皆さんの言葉に教わったこと</a>
+  <a href="#miss">届かなかったこと</a>
+  <a href="#kaisen">回線が落ちた件</a>
+  <a href="#next">次への宿題</a>
+</nav>
+
+<section class="step" id="rubric">
+  <h2>いちばん届いたのは、俳句でも話し合いでもなくルーブリックでした</h2>
+  <p class="what">いただいた声の半分近くが、ここに触れていました。正直、想定していた順番とは違いました。</p>
+  <div class="line3">ルーブリックは、提示するものではなく、使わせるもの。
+    <small>渡して「この通り書きなさい」と言うのではなく、AIの作品を評価する練習台にする</small></div>
+  <p>とくに強かったのは、<strong>ふだんルーブリックを作り込んでいる先生ほど、自分は提示するだけで終わっていた、と振り返っておられた</strong>ことです。作ることにも配ることにも手をかけているのに、授業の中でそれを使わせる場面は作っていなかった、と。複数の先生から同じ趣旨の声をいただきました。</p>
+  <p>もう一点、<strong>その場の子どもの会話のレベルに合わせてルーブリックを作らせる</strong>という順番が新しかった、という受け止めが複数ありました。教員側が先に用意して評価に使う道具、という前提が外れたということだと思います。</p>
+  <div class="note calm">授業では、ルーブリックを配って「見ながら書きなさい」と100回言うより、<strong>そのルーブリックで一度評価させる</strong>ほうが早い。AIの作品なら、どれだけ酷評しても人間関係が壊れません。</div>
+</section>
+
+<section class="step" id="translate">
+  <h2>その場で、ご自分の場面に置き換えてくださいました</h2>
+  <p class="what">これがいちばんありがたい反応でした。小学校の俳句と話し合いが、そのまま別の校種・別の教科に移っています。</p>
+  <table class="rub">
+    <tr><th>情報科</th><td>プログラミングのアルゴリズム指導へ。手順がめちゃくちゃなものをあえて作らせ、ルーブリックで評価させてから作り直させる、という流れに置き換えられていました</td></tr>
+    <tr><th>高校・総合探究</th><td>年度内に作るよう求められている探究のルーブリックへ。自校のいろいろな授業の話し合いを録音してサンプルにすれば、自校の生徒の実態に合ったものが作れる、という見通しを持たれていました</td></tr>
+    <tr><th>校内研究</th><td>研究協議そのものを録音してAIに渡し、研修の報告や資料づくりに使う、という発想。子どもではなく職員の話し合いを対象にする案です</td></tr>
+    <tr><th>小学校</th><td>探究スキルの指導へ。練習題材で一度ルーブリックを体験させてから、子どもたちの探究のディベートに移す、という二段構え</td></tr>
+  </table>
+  <p class="what" style="margin-bottom:0">「小学校の実践ですが、線引きは校種を問いません」と申し上げた部分が、実際に機能したということだと受け取りました。</p>
+</section>
+
+<section class="step" id="words">
+  <h2>皆さんの言葉に教わったこと</h2>
+  <p class="what">こちらが一度も使っていない言い方が、いくつも返ってきました。こちらの言い方より的確なので、これから使わせていただきます。</p>
+  <ul class="checks">
+    <li><strong>引き算</strong>——アプリの使い方の説明で授業が膨らんでしまうことへの対処として、AIで手順を引き算する、という捉え方。私が「作業を渡す」と言っていたことの、もっと分かりやすい言い換えでした</li>
+    <li><strong>ワンステップ</strong>——AIの答えをそのまま受け取らず、「自分はこう思う」を一度はさむ。そのひと手間があってはじめて、AIが壁打ち相手として意味を持つ、という整理</li>
+    <li><strong>リアル現場モード</strong>——教科書どおりではない、実際の子どもの反応に即した話として受け取っていただいたようです</li>
+    <li><strong>余白を、自分で埋めてしまっている</strong>——AIで空いたはずの時間を、自分で新しい仕事で埋めていた、という自己点検。私が90分かけて言おうとしたことを、一言で言い当てられてしまいました</li>
+  </ul>
+</section>
+
+<section class="step" id="miss">
+  <h2>届かなかったこと</h2>
+  <p class="what">ここがいちばん大事なので、はっきり書きます。</p>
+  <div class="line3" style="border-color:#b4553f">魔法のように見えるけれど、自分にはまだできない。
+    <small>それでも、考え方を変えることならできるかもしれない——という受け止めをいただきました</small></div>
+  <p>手の内は全部このページに置いたつもりでした。それでも、<strong>明日のご自分にできる最小の1個</strong>をお渡しできていませんでした。見せることはできていて、持ち帰らせることができていない。これは設計の落ち度です。次に直します。</p>
+  <p>もうひとつ、<strong>自治体のセキュリティ方針で、そもそも使えない</strong>という壁についての声もありました。子どもの声を録れない環境の場合は、<strong>まず職員の協議を録ってみてください。</strong>校内研究の協議録を要約するだけでも、同じことが起こります。この逃げ道を、私のほうから先にお伝えするべきでした。</p>
+  <p style="margin-bottom:0">また、途中からご参加の方が聞き逃した部分を拾える作りにしていませんでした。ここも次回の課題です。</p>
+</section>
+
+<section class="step" id="kaisen">
+  <h2>回線が落ちた件について</h2>
+  <p class="what">ワーク②の本番「海がいいか、山がいいか」までお見せできませんでした。申し訳ありませんでした。</p>
+  <p>私の手持ち回線が詰まり、AIの応答が返ってきませんでした。逃げ道として別の分析結果を用意してあったのですが、<strong>それを学校のアカウント側に置いていたため、その場で開けませんでした。</strong>完全に私の準備の穴です。</p>
+  <div class="note calm">ただ、いただいた声を読み直すと、<strong>実演が落ちても内容は届いていました。</strong>AIの判断の根拠を見せてから基準を作らせること、助言をもらってもすぐには直させないこと。どちらも、口で説明した分だけで伝わっていました。<br>
+  これは私にとって発見でした。この実演は「無いと伝わらない」ものではなく、「<strong>あると速い</strong>」ものだったということです。</div>
+</section>
+
+<section class="step" id="next">
+  <h2>次への宿題（いただいた声から4つ）</h2>
+  <ol class="steps">
+    <li><strong>締めに「明日できる1個」を置く。</strong>いまのところの案は——次の授業で使うルーブリックを1つ選んで、AIに作品を5つ作らせて、それを子どもに評価させてみる。これだけです。</li>
+    <li><strong>ルーブリックを主役にする。</strong>「提示するものではなく、使わせるもの」を先に立てて、俳句はその実例に降ろします。</li>
+    <li><strong>逃げ道は、持ち出せる場所に置く。</strong>学校のアカウントに置かない。</li>
+    <li><strong>使えない人への逃げ道を、こちらから渡す。</strong>「子どもの声が無理なら、まず職員の協議から」を1行、必ず言います。</li>
+  </ol>
+</section>
+
+<div class="cta">
+  <p style="margin-top:0"><strong>当日の資料は、そのまま置いてあります</strong></p>
+  <p><a class="btnlink" href="index.html">当日の特設ページへ戻る</a>
+     <a class="btnlink ghost" href="assets/tsuru20260919_slides.pdf" target="_blank" rel="noopener">スライド（PDF・34枚）</a>
+     <a class="btnlink ghost" href="https://johnnymaeta.github.io/kirokukunneo/" target="_blank" rel="noopener">スーパー記録くん</a></p>
+  <p style="margin-bottom:0">連休の初日に、しかも山を越えて集まってくださった皆さんへ。<strong>ありがとうございました。</strong>来年から教壇に立つという方から、この先が明るく思えた、という趣旨の声をいただきました。あれがいちばん嬉しかったです。</p>
+</div>
+
+<footer class="page">
+  つるぶん授業フェス2026 Day1「有識者 vs ノラ教師」生成AIワークショップ（2026年9月19日・都留文科大学）／前多昌顕<br>
+  このページは、当日いただいた振り返りの録音をもとに、前多が要約して作成しました。個々の発言の引用は掲載していません。
+</footer>
+
+</div>
+</body>
+</html>
